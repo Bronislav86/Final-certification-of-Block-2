@@ -1,5 +1,6 @@
 package Animals.PackAnimals;
 
+
 import Animals.BaseAnimal;
 
 public abstract class PackAnimals extends BaseAnimal {

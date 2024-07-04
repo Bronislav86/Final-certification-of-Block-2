@@ -1,5 +1,7 @@
 package Animals;
 
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class BaseAnimal {
 
@@ -36,6 +38,9 @@ public abstract class BaseAnimal {
 
     public String getCommands() {
         return commands;
+        // for (String string : commands) {
+        //     System.out.println(string);
+        // }
     }
 
 
@@ -54,14 +59,19 @@ public abstract class BaseAnimal {
     }
 
 
-    public void setCommands(String commands) {
-        this.commands = commands;
+    public void setCommands(String newCommand) {
+        if (commands.isEmpty()){
+            this.commands = commands + newCommand;
+        } else{
+            this.commands = commands + ", ";
+            this.commands = commands + newCommand;
+        }            
     }
 
 
     @Override
     public String toString() {
-        return "Animal [Name=" + name + ", Type=" + type + ", BirthDate=" + birthDate + ", Commands=" + commands + "]";
+        return "Name=" + name + ", Type=" + type + ", BirthDate=" + birthDate + ", Commands=" + commands;
     }
 
     
