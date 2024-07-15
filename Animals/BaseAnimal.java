@@ -1,63 +1,54 @@
 package Animals;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public abstract class BaseAnimal {
 
     protected String name;
     protected String type;
-    protected long birthDate;
+    protected int year;
+    protected int month;
+    protected int day;
     protected String commands;
 
 
-    public BaseAnimal(String name, String type, long birthDate, String commands) {
+    
+    public BaseAnimal(String name, String type, int year, int month, int day, String commands) {
         this.name = name;
         this.type = type;
-        this.birthDate = birthDate;
+        this.year = year;
+        this.month = month;
+        this.day = day;
         this.commands = commands;
     }
+
     public BaseAnimal (){
     }
-
 
     public String getName() {
         return name;
     }
 
-
     public String getType() {
         return type;
     }
 
-
-    public long getBirthDate() {
-        return birthDate;
+    public StringBuilder getBirthDay(){
+        StringBuilder st = new StringBuilder();
+        st.append(year).append("-").append(month).append("-").append(day);
+    return st;
     }
-
 
     public String getCommands() {
         return commands;
-        // for (String string : commands) {
-        //     System.out.println(string);
-        // }
     }
-
 
     public void setName(String name) {
         this.name = name;
     }
 
-
     public void setType(String type) {
         this.type = type;
     }
-
-
-    public void setBirthDate(long birthDate) {
-        this.birthDate = birthDate;
-    }
-
 
     public void setCommands(String newCommand) {
         if (commands.isEmpty()){
@@ -68,10 +59,9 @@ public abstract class BaseAnimal {
         }            
     }
 
-
     @Override
     public String toString() {
-        return "Name=" + name + ", Type=" + type + ", BirthDate=" + birthDate + ", Commands=" + commands;
+        return "Name=" + name + ", Type=" + type + ", BirthDate=" + getBirthDay() + ", Commands=" + commands;
     }
 
     

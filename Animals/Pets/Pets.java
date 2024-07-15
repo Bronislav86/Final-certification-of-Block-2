@@ -4,8 +4,8 @@ import Animals.BaseAnimal;
 
 public abstract class Pets extends BaseAnimal {
 
-    public Pets(String name, String type, long birthDate, String commands) {
-        super(name, type, birthDate, commands);
+    public Pets(String name, String type, int year, int month, int day, String commands) {
+        super(name, type, year, month, day, commands);
     }
     
     public Pets(){
