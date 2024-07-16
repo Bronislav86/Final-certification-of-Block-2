@@ -1,4 +1,3 @@
-import java.text.ParseException;
 import java.util.Scanner;
 
 import Animals.BaseAnimal;
@@ -8,21 +7,46 @@ import Animals.PackAnimals.Horse;
 import Animals.Pets.Cat;
 import Animals.Pets.Dog;
 import Animals.Pets.Humster;
+import Menu.Menu;
+
 
 public class Program {
 
     public static void main(String[] args) {
 
-        BaseAnimal cat1 = new Cat("Whiskers", "Cat", 2000, 01, 01, "");
-        cat1.setCommands("Down");
-        cat1.setCommands("Stay");
-        cat1.setCommands("Fetch");
-        System.out.println(cat1.getCommands());
-        System.out.println(cat1.toString());
-        System.out.println();
-        System.out.println(cat1.getCommands());
+        Menu menu = new Menu();
+        menu.startMenu();
+        Scanner scan = new Scanner(System.in);
+        boolean work = true;
+        while (work) {
+            int menuNum = Integer.parseInt(scan.nextLine());
 
-        addNewAnimal();
+            if (menuNum == 1) {
+                    addNewAnimal();
+                    menu.startMenu();
+                }else if (menuNum == 2){
+                    //toPrintAll();
+                    menu.startMenu();
+                }else if (menuNum == 3) {
+                
+                }else if (menuNum == 4) {
+                
+                }else if (menuNum == 5) {
+                    work = false;
+                }
+                else{
+                    System.out.println("Команда не распознана. " + 
+                                        "Выберите один из пунктов меню:\n");
+                    menu.startMenu();
+                    menuNum = Integer.parseInt(scan.nextLine());
+            }
+        }
+        scan.close();
+    }
+
+    private static void toPrintAll() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'toPrintAll'");
     }
 
     private static void addNewAnimal(){
@@ -56,5 +80,6 @@ public class Program {
             BaseAnimal horse = new Horse(name, type, year, month, day, commands);
         }
         scanner.close();
+        System.out.println("\nНовый питомец успешно дабвлен в базу.\n");
     }
 }
