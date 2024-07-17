@@ -64,5 +64,8 @@ public abstract class BaseAnimal {
         return "Name=" + name + ", Type=" + type + ", BirthDate=" + getBirthDay() + ", Commands=" + commands;
     }
 
+    public String toWrite(){
+        return name + "," + type + "," + getBirthDay() + "," + commands;
+    }
     
 }
