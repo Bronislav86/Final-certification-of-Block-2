@@ -2,7 +2,6 @@ package Animals;
 
 
 public abstract class BaseAnimal {
-
     protected String name;
     protected String type;
     protected int year;
@@ -61,7 +60,7 @@ public abstract class BaseAnimal {
 
     @Override
     public String toString() {
-        return "Name=" + name + ", Type=" + type + ", BirthDate=" + getBirthDay() + ", Commands=" + commands;
+        return " Name=" + name + " Type=" + type + " BirthDate=" + getBirthDay() + " Commands=" + commands + " ;";
     }
 
     public String toWrite(){
