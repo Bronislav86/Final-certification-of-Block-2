@@ -37,6 +37,10 @@ public abstract class BaseAnimal {
     return st;
     }
 
+    public int getYear() {
+        return year;
+    }
+
     public String getCommands() {
         return commands;
     }
@@ -60,7 +64,7 @@ public abstract class BaseAnimal {
 
     @Override
     public String toString() {
-        return " Name=" + name + " Type=" + type + " BirthDate=" + getBirthDay() + " Commands=" + commands + " ;";
+        return " Имя=" + name + " Тип=" + type + " Дата_Рождения=" + getBirthDay() + " Команды=" + commands + " ;";
     }
 
     public String toWrite(){

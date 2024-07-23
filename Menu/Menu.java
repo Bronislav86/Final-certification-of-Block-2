@@ -25,7 +25,8 @@ public class Menu {
                             "3. Узнать сколько всего животных сейчас в питомнике\n" +
                             "4. Обучить животное новым командам\n" + 
                             "5. Вывести список команд животного\n" +
-                            "6. Выход");
+                            "6. Вывести список живтоных по году рождения\n" +
+                            "7. Выход");
     }
     public void startMenu () {
         data.animalDBCreator();
@@ -42,7 +43,7 @@ public class Menu {
                 System.out.println(data.showAllAnimals().toString());
                 showMenu();
             } else if (menuNum == 3) {
-                System.out.println("Всего животных в питомнике: " + data.getIndex());
+                System.out.println("Всего животных в питомнике: " + data.getAnimalsCount());
                 showMenu();
             } else if (menuNum == 4) {
                 data.learnAnimal();
@@ -51,9 +52,12 @@ public class Menu {
                 System.out.println(data.showCommands());
                 showMenu();
             } else if (menuNum == 6) {
+                data.showAnimalsSortedByBirthYear();
+                showMenu();
+            }else if (menuNum == 7) {
                 System.out.println("До новых встреч!");
-                work = false;
-            } else {
+                work = false;            }
+            else {
                 System.out.println("Команда не распознана. " +
                         "Выберите один из пунктов меню:\n");
                 showMenu();
