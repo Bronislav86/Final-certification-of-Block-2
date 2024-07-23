@@ -1,0 +1,176 @@
+bronik@bronik-gb:~$ mkdir final_test
+bronik@bronik-gb:~$ cd final_test/
+bronik@bronik-gb:~/final_test$ cat >  Pets
+Cat 
+dog
+Humsterbronik@bronik-gb:~/final_test$ cat > PackAnimals
+Horse
+Camel
+Donkey       
+bronik@bronik-gb:~/final_test$ cat Pets PackAnimals > Animals
+bronik@bronik-gb:~/final_test$ ll
+total 20
+drwxrwxr-x  2 bronik bronik 4096 июл  1 19:41 ./
+drwxr-x--- 23 bronik bronik 4096 июл  1 19:37 ../
+-rw-rw-r--  1 bronik bronik   34 июл  1 19:41 Animals
+-rw-rw-r--  1 bronik bronik   19 июл  1 19:38 PackAnimals
+-rw-rw-r--  1 bronik bronik   15 июл  1 19:38 Pets
+bronik@bronik-gb:~/final_test$ mv Animals HumanFriends.txt
+bronik@bronik-gb:~/final_test$ ls
+HumanFriends.txt  PackAnimals  Pets
+bronik@bronik-gb:~/final_test$ mkdir NewDirectory
+bronik@bronik-gb:~/final_test$ mv HumanFriends.txt NewDirectory/
+bronik@bronik-gb:~/final_test$ ls
+NewDirectory  PackAnimals  Pets
+bronik@bronik-gb:~/final_test$ ls NewDirectory/
+HumanFriends.txt
+bronik@bronik-gb:~/final_test$ sudo apt-get install mysql-server
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following package was automatically installed and is no longer required:
+  ubuntu-fan
+Use 'sudo apt autoremove' to remove it.
+The following additional packages will be installed:
+  mysql-client-8.0 mysql-client-core-8.0 mysql-common mysql-server-8.0 mysql-server-core-8.0
+Suggested packages:
+  mailx tinyca
+The following NEW packages will be installed:
+  mysql-client-8.0 mysql-client-core-8.0 mysql-common mysql-server mysql-server-8.0 mysql-server-core-8.0
+0 upgraded, 6 newly installed, 0 to remove and 6 not upgraded.
+Need to get 21,8 MB of archives.
+After this operation, 185 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://ru.archive.ubuntu.com/ubuntu jammy/main amd64 mysql-common all 5.8+1.0.8 [7 212 B]
+Get:2 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main amd64 mysql-client-core-8.0 amd64 8.0.37-0ubuntu0.22.04.3 [2 762 kB]
+Get:3 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main amd64 mysql-client-8.0 amd64 8.0.37-0ubuntu0.22.04.3 [22,7 kB]
+Get:4 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main amd64 mysql-server-core-8.0 amd64 8.0.37-0ubuntu0.22.04.3 [17,6 MB]
+Get:5 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main amd64 mysql-server-8.0 amd64 8.0.37-0ubuntu0.22.04.3 [1 438 kB]                                                            
+Get:6 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main amd64 mysql-server all 8.0.37-0ubuntu0.22.04.3 [9 462 B]                                                                   
+Fetched 21,8 MB in 9s (2 300 kB/s)                                                                                                                                                      
+Preconfiguring packages ...
+Selecting previously unselected package mysql-common.
+(Reading database ... 200869 files and directories currently installed.)
+Preparing to unpack .../mysql-common_5.8+1.0.8_all.deb ...
+Unpacking mysql-common (5.8+1.0.8) ...
+Selecting previously unselected package mysql-client-core-8.0.
+Preparing to unpack .../mysql-client-core-8.0_8.0.37-0ubuntu0.22.04.3_amd64.deb ...
+Unpacking mysql-client-core-8.0 (8.0.37-0ubuntu0.22.04.3) ...
+Selecting previously unselected package mysql-client-8.0.
+Preparing to unpack .../mysql-client-8.0_8.0.37-0ubuntu0.22.04.3_amd64.deb ...
+Unpacking mysql-client-8.0 (8.0.37-0ubuntu0.22.04.3) ...
+Selecting previously unselected package mysql-server-core-8.0.
+Preparing to unpack .../mysql-server-core-8.0_8.0.37-0ubuntu0.22.04.3_amd64.deb ...
+Unpacking mysql-server-core-8.0 (8.0.37-0ubuntu0.22.04.3) ...
+Setting up mysql-common (5.8+1.0.8) ...
+update-alternatives: using /etc/mysql/my.cnf.fallback to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+Selecting previously unselected package mysql-server-8.0.
+(Reading database ... 201067 files and directories currently installed.)
+Preparing to unpack .../mysql-server-8.0_8.0.37-0ubuntu0.22.04.3_amd64.deb ...
+Unpacking mysql-server-8.0 (8.0.37-0ubuntu0.22.04.3) ...
+Selecting previously unselected package mysql-server.
+Preparing to unpack .../mysql-server_8.0.37-0ubuntu0.22.04.3_all.deb ...
+Unpacking mysql-server (8.0.37-0ubuntu0.22.04.3) ...
+Setting up mysql-client-core-8.0 (8.0.37-0ubuntu0.22.04.3) ...
+Setting up mysql-server-core-8.0 (8.0.37-0ubuntu0.22.04.3) ...
+Setting up mysql-client-8.0 (8.0.37-0ubuntu0.22.04.3) ...
+Setting up mysql-server-8.0 (8.0.37-0ubuntu0.22.04.3) ...
+update-alternatives: using /etc/mysql/mysql.cnf to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+Renaming removed key_buffer and myisam-recover options (if present)
+mysqld will log errors to /var/log/mysql/error.log
+mysqld is running as pid 51574
+Created symlink /etc/systemd/system/multi-user.target.wants/mysql.service → /lib/systemd/system/mysql.service.
+Setting up mysql-server (8.0.37-0ubuntu0.22.04.3) ...
+Processing triggers for man-db (2.10.2-1) ...
+bronik@bronik-gb:~/final_test$ systemctl status mysql
+● mysql.service - MySQL Community Server
+     Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)
+     Active: active (running) since Mon 2024-07-01 20:02:11 MSK; 50s ago
+    Process: 51999 ExecStartPre=/usr/share/mysql/mysql-systemd-start pre (code=exited, status=0/SUCCESS)
+   Main PID: 52007 (mysqld)
+     Status: "Server is operational"
+      Tasks: 38 (limit: 4597)
+     Memory: 368.2M
+        CPU: 1.807s
+     CGroup: /system.slice/mysql.service
+             └─52007 /usr/sbin/mysqld
+
+июл 01 20:02:10 bronik-gb systemd[1]: Starting MySQL Community Server...
+июл 01 20:02:11 bronik-gb systemd[1]: Started MySQL Community Server.
+bronik@bronik-gb:~/final_test$ sudo ss -ntlp
+State                    Recv-Q                   Send-Q                                     Local Address:Port                                      Peer Address:Port                   Process                                                                                                                                                                                  
+LISTEN                   0                        32                                              10.0.3.1:53                                             0.0.0.0:*                       users:(("dnsmasq",pid=1599,fd=7))                                                                                                                                                       
+LISTEN                   0                        128                                            127.0.0.1:631                                            0.0.0.0:*                       users:(("cupsd",pid=22747,fd=7))                                                                                                                                                        
+LISTEN                   0                        70                                             127.0.0.1:33060                                          0.0.0.0:*                       users:(("mysqld",pid=52007,fd=21))                                                                                                                                                      
+LISTEN                   0                        511                                              0.0.0.0:80                                             0.0.0.0:*                       users:(("nginx",pid=972,fd=6),("nginx",pid=971,fd=6),("nginx",pid=970,fd=6),("nginx",pid=969,fd=6),("nginx",pid=965,fd=6))                                                              
+LISTEN                   0                        128                                              0.0.0.0:22                                             0.0.0.0:*                       users:(("sshd",pid=24851,fd=3))                                                                                                                                                         
+LISTEN                   0                        151                                            127.0.0.1:3306                                           0.0.0.0:*                       users:(("mysqld",pid=52007,fd=23))                                                                                                                                                      
+LISTEN                   0                        4096                                       127.0.0.53%lo:53                                             0.0.0.0:*                       users:(("systemd-resolve",pid=523,fd=14))                                                                                                                                               
+LISTEN                   0                        511                                                    *:9001                                                 *:*                       users:(("apache2",pid=1053,fd=4),("apache2",pid=1052,fd=4),("apache2",pid=1051,fd=4),("apache2",pid=1047,fd=4),("apache2",pid=1045,fd=4),("apache2",pid=1032,fd=4))                     
+LISTEN                   0                        511                                                 [::]:80                                                [::]:*                       users:(("nginx",pid=972,fd=7),("nginx",pid=971,fd=7),("nginx",pid=970,fd=7),("nginx",pid=969,fd=7),("nginx",pid=965,fd=7))                                                              
+LISTEN                   0                        128                                                 [::]:22                                                [::]:*                       users:(("sshd",pid=24851,fd=4))                                                                                                                                                         
+LISTEN                   0                        128                                                [::1]:631                                               [::]:*                       users:(("cupsd",pid=22747,fd=6))
+bronik@bronik-gb:~/final_test$ sudo apt install mysql-apt-config 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+mysql-apt-config is already the newest version (0.8.30-1).
+The following package was automatically installed and is no longer required:
+  ubuntu-fan
+Use 'sudo apt autoremove' to remove it.
+0 upgraded, 0 newly installed, 0 to remove and 8 not upgraded.
+bronik@bronik-gb:~/final_test$ sudo apt download zip*
+Get:1 http://ru.archive.ubuntu.com/ubuntu jammy/main amd64 zip amd64 3.0-12build2 [176 kB]
+Get:2 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 zipalign amd64 1:10.0.0+r36-1 [19,4 kB]
+Get:3 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 zipcmp amd64 1.7.3-1ubuntu2 [11,7 kB]
+Get:4 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 zipmerge amd64 1.7.3-1ubuntu2 [8 812 B]
+Get:5 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 zipper.app amd64 1.5-3build3 [76,3 kB]
+Get:6 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 ziproxy amd64 3.3.2-2 [102 kB]
+Get:7 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 ziptime amd64 1:10.0.0+r36-1 [8 048 B]
+Get:8 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 ziptool amd64 1.7.3-1ubuntu2 [16,9 kB]
+Fetched 419 kB in 1s (746 kB/s)
+W: Download is performed unsandboxed as root as file '/home/bronik/final_test/zip_3.0-12build2_amd64.deb' couldn't be accessed by user '_apt'. - pkgAcquire::Run (13: Permission denied)
+bronik@bronik-gb:~/final_test$ cd ~
+bronik@bronik-gb:~$ ls
+cycle.sh  docker         Documents  final_test  linux_course  my-docker-project  Public     shared  Templates  Videos
+Desktop   docker_course  Downloads  ip.rules    Music         Pictures           script.sh  snap    testsc
+bronik@bronik-gb:~$ ls final_test/
+mysql-apt-config_0.8.30-1_all.deb  Pets                                 zipcmp_1.7.3-1ubuntu2_amd64.deb    ziproxy_3.3.2-2_amd64.deb
+NewDirectory                       zip_3.0-12build2_amd64.deb           zipmerge_1.7.3-1ubuntu2_amd64.deb  ziptime_1%3a10.0.0+r36-1_amd64.deb
+PackAnimals                        zipalign_1%3a10.0.0+r36-1_amd64.deb  zipper.app_1.5-3build3_amd64.deb   ziptool_1.7.3-1ubuntu2_amd64.deb
+udo dpkg -i zip_3.0-12build2_amd64.deb
+Selecting previously unselected package zip.
+(Reading database ... 201092 files and directories currently installed.)
+Preparing to unpack zip_3.0-12build2_amd64.deb ...
+Unpacking zip (3.0-12build2) ...
+Setting up zip (3.0-12build2) ...
+Processing triggers for man-db (2.10.2-1) ...
+bronik@bronik-gb:~/final_test$ zip --help
+Copyright (c) 1990-2008 Info-ZIP - Type 'zip "-L"' for software license.
+Zip 3.0 (July 5th 2008). Usage:
+zip [-options] [-b path] [-t mmddyyyy] [-n suffixes] [zipfile list] [-xi list]
+  The default action is to add or replace zipfile entries from list, which
+  can include the special name - to compress standard input.
+  If zipfile and list are omitted, zip compresses stdin to stdout.
+  -f   freshen: only changed files  -u   update: only changed or new files
+  -d   delete entries in zipfile    -m   move into zipfile (delete OS files)
+  -r   recurse into directories     -j   junk (don't record) directory names
+  -0   store only                   -l   convert LF to CR LF (-ll CR LF to LF)
+  -1   compress faster              -9   compress better
+  -q   quiet operation              -v   verbose operation/print version info
+  -c   add one-line comments        -z   add zipfile comment
+  -@   read names from stdin        -o   make zipfile as old as latest entry
+  -x   exclude the following names  -i   include only the following names
+  -F   fix zipfile (-FF try harder) -D   do not add directory entries
+  -A   adjust self-extracting exe   -J   junk zipfile prefix (unzipsfx)
+  -T   test zipfile integrity       -X   eXclude eXtra file attributes
+  -y   store symbolic links as the link instead of the referenced file
+  -e   encrypt                      -n   don't compress these suffixes
+  -h2  show more help
+bronik@bronik-gb:~/final_test$ sudo dpkg -r zip
+(Reading database ... 201106 files and directories currently installed.)
+Removing zip (3.0-12build2) ...
+Processing triggers for man-db (2.10.2-1) ...
+bronik@bronik-gb:~/final_test$ zip --help
+bash: /usr/bin/zip: No such file or directory
+
